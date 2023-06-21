@@ -10,7 +10,7 @@ a, b, c = int(input('Введите длину 1 стороны треуголь
 if a < b + c and b < a + c and c < a + b:
     if a == b == c:
         type_triangle = 'Треугольник равносторонний.'
-    elif a == b and a != c or b == c and a != b or a == c and a != c:
+    elif a == b or b == c or a == c:
         type_triangle = 'Треугольник равнобедренный.'
     else:
         type_triangle = 'Треугольник разносторонний.'
