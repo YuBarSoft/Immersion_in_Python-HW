@@ -5,7 +5,7 @@
 from sympy import *
 
 num = input('Введите любое число от 0 до 100000: ')
-if num.isdigit() and (0 <= int(num) <= 100000):
+if num.isdigit() and 0 <= int(num) <= 100000:
     if isprime(num):
         print('\tЧисло простое')
     else:
