@@ -3,12 +3,13 @@
 # В результате получаем словарь с именем в качестве ключа и суммой премии в качестве значения.
 # Сумма рассчитывается как ставка умноженная на процент премии.
 
+names = ['Анна', 'Глеб', 'Михаил', 'Тимофей']
+salary = [10000, 16000, 18000, 20000]
+bonus = ['10.50%', '15.25%', '13.50%', '18.05%']
 
 
+def salary_gen(names: list[str], salary: list[int], bonus: list[str]) -> dict[str: float]:
+    return {name: int(sal) / 100 * float(bon[:-1]) for name, sal, bon in zip(names, salary, bonus)}.items()
 
 
-
-
-
-
-
+print(*(salary_gen(names, salary, bonus)))
