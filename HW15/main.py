@@ -24,10 +24,10 @@ if __name__ == "__main__":
 
     if result:
         for item in result:
-            logging.info(f"Name: {item.name}")
-            logging.info(f"Extension: {item.extension}")
-            logging.info(f"Is Directory: {item.is_directory}")
-            logging.info(f"Parent Directory: {item.parent_directory}")
+            logging.info(f"Name: {item.name},"
+                         f"Extension: {item.extension},"
+                         f"Is Directory: {item.is_directory},"
+                         f"Parent Directory: {item.parent_directory}")
         print("Информация о директории записана в файл.")
     else:
         print("Произошла ошибка. Проверьте путь до директории и данные в лог-файле.")
