@@ -20,15 +20,19 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     setup_logger('logfile.txt')
-    result = collect_directory_info(args.path)
 
-    if result:
-        for item in result:
-            logging.info(f"Name: {item.name},"
-                         f"Extension: {item.extension},"
-                         f"Is Directory: {item.is_directory},"
-                         f"Parent Directory: {item.parent_directory}")
-        print("Информация о директории записана в файл.")
-    else:
-        print("Произошла ошибка. Проверьте путь до директории и данные в лог-файле.")
+    try:
+        result = collect_directory_info(args.path)
 
+        if result:
+            for item in result:
+                logging.info(f"Name: {item.name},"
+                             f" Extension: {item.extension},"
+                             f" Is Directory: {item.is_directory},"
+                             f" Parent Directory: {item.parent_directory}")
+            print("Информация о директории записана в файл logfile.txt.")
+        else:
+            print("Произошла ошибка. Проверьте путь до директории и данные в лог-файле.")
+
+    except Exception as e:
+        logging.error(f'Произошла ошибка: {str(e)}')
