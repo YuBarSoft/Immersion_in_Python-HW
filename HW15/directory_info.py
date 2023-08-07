@@ -15,6 +15,11 @@ def collect_directory_info(path):
             is_directory = os.path.isdir(full_path)
             parent_directory = os.path.basename(path)
 
+            extension = extension.replace('.', '')
+
+            if is_directory:
+                extension = 'None'
+
             file_data = FileData(name=name, extension=extension, is_directory=is_directory, parent_directory=parent_directory)
             directory_info.append(file_data)
 
@@ -22,4 +27,3 @@ def collect_directory_info(path):
     except Exception as e:
         logging.error(f'Error occurred: {str(e)}')
         return None
-
