@@ -1,5 +1,4 @@
 import os
-
 import logging
 from collections import namedtuple
 
@@ -24,7 +23,7 @@ def collect_directory_info(path):
             directory_info.append(file_data)
 
         return directory_info
-    
+
     except Exception as e:
         logging.error(f'Error occurred: {str(e)}')
         return None
