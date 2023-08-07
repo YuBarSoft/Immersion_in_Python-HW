@@ -19,14 +19,14 @@ if __name__ == "__main__":
     parser.add_argument('path', type=str, help='Path to the directory')
     args = parser.parse_args()
 
-    setup_logger('logfile.txt')
-
+    logger = setup_logger('logfile.txt')
+    
     try:
         result = collect_directory_info(args.path)
 
         if result:
             for item in result:
-                logging.info(f"Name: {item.name},"
+                logger.info(f"Name: {item.name},"
                              f" Extension: {item.extension},"
                              f" Is Directory: {item.is_directory},"
                              f" Parent Directory: {item.parent_directory}")
